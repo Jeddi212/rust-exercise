@@ -1,6 +1,8 @@
-pub mod snip_snap;
+pub mod math;
+pub mod misc;
 pub mod util;
+
 fn main() {
     println!("Hello, this is rust exercise!\n");
-    snip_snap::run();
+    misc::run();
 }
