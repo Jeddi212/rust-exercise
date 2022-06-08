@@ -1,6 +1,6 @@
 pub mod factorial;
 
-use colored::*;
+use crate::util::error_output;
 use crate::util::user_input::*;
 
 pub fn run() {
@@ -40,10 +40,7 @@ fn factorial() {
 
     let input = str_to_i32(read_new());
 
-    if input < 0 {
-        eprintln!("\n{} ::: Your number [{}] is smaller than 0", "ERROR".red(), input);
-        std::process::exit(0x0100);
-    }
+    error_output::validate(input);
 
     factorial::factorial(input);
 }
