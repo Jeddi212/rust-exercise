@@ -1,8 +1,8 @@
 pub mod factorial;
 
 use crate::util::error_output;
-use crate::util::user_input::*;
 use crate::util::heading::*;
+use crate::util::user_input::*;
 
 pub fn run() {
     title("Math","Please select the option");
