@@ -2,9 +2,12 @@ pub mod factorial;
 
 use crate::util::error_output;
 use crate::util::user_input::*;
+use crate::util::heading::*;
 
 pub fn run() {
-    welcome();
+    title("Math","Please select the option");
+    menu("Math","Option","1. Factorial");
+    prompt();
 
     let input = read_new();
     println!();
@@ -19,24 +22,9 @@ fn choose(input: String) {
     }
 }
 
-fn welcome() {
-    println!("Math\nPlease select the option");
-    println!("-----------------------------");
-    menu();
-}
-
-fn menu() {
-    print!(
-        "
-        Math ::: Option
-        1. Factorial
-        ~> "
-    );
-}
-
 fn factorial() {
-    println!("Factorial\nPlease input a number");
-    print!("~> ");
+    title("Factorial", "Please input a number");
+    prompt();
 
     let input = str_to_i32(read_new());
 

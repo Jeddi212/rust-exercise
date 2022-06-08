@@ -2,10 +2,15 @@ pub mod math;
 pub mod misc;
 pub mod util;
 
+use crate::util::heading::*;
 use crate::util::user_input::*;
 
 fn main() {
-    welcome();
+    title("Hello", "this is rust exercise");
+    menu("Menu", "🦀", "1. Misc
+        2. Math"
+    );
+    prompt();
 
     let input = read_new();
     println!();
@@ -19,20 +24,4 @@ fn choose(input: String) {
         "2" => math::run(),
         _ => print!("Not implemented yet"),
     }
-}
-
-fn welcome() {
-    println!("Hello, this is rust exercise!");
-    println!("-----------------------------");
-    menu();
-}
-
-fn menu() {
-    print!(
-        "
-        Menu
-        1. Misc
-        2. Math
-        ~> "
-    );
 }
