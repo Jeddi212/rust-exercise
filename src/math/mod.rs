@@ -18,7 +18,7 @@ pub fn run() {
 fn choose(input: String) {
     match input.as_str() {
         "1" => factorial(),
-        _ => print!("Not implemented yet"),
+        _ => error_output::not_implemented(),
     }
 }
 
@@ -28,7 +28,8 @@ fn factorial() {
 
     let input = str_to_i32(read_new());
 
-    error_output::validate(input);
+    error_output::validate_minimum(input, 0);
+    error_output::validate_maximum(input, 34);
 
-    factorial::factorial(input);
+    result_output(factorial::factorial(input).to_string()); 
 }

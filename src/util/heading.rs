@@ -4,7 +4,7 @@ pub fn title(title: &str, sub_title: &str) {
 
 println!(
     "{} ::: {}",
-    title.yellow(),
+    title.yellow().bold(),
     sub_title
 );
 
@@ -17,14 +17,18 @@ pub fn menu(title: &str, sub_title: &str, extra: &str) {
         {} ::: {}
         {}
         ",
-        title.yellow(),
+        title.yellow().bold(),
         sub_title,
         extra
     );
 }
 
+pub fn result_output(result: String) {
+    println!("{}: ", result.cyan().bold());
+}
+
 pub fn prompt() {
-    print!("{} ", "~>".green());
+    print!("{} ", "~>".green().bold());
 }
 
 pub fn line() {
