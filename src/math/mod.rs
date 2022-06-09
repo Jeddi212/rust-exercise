@@ -1,4 +1,5 @@
-pub mod factorial;
+pub mod basic;
+pub mod recursive;
 
 use crate::util::error_output;
 use crate::util::heading::*;
@@ -6,7 +7,8 @@ use crate::util::user_input::*;
 
 pub fn run() {
     title("Math","Please select the option");
-    menu("Math","Option","1. Factorial");
+    menu("Math","Option","1. Basic
+        2. Recursive");
     prompt();
 
     let input = read_new();
@@ -17,19 +19,9 @@ pub fn run() {
 
 fn choose(input: String) {
     match input.as_str() {
-        "1" => factorial(),
+        "1" => basic::run(),
+        "2" => recursive::run(),
         _ => error_output::not_implemented(),
     }
 }
 
-fn factorial() {
-    title("Factorial", "Please input a number");
-    prompt();
-
-    let input = str_to_i32(read_new());
-
-    error_output::validate_minimum(input, 0);
-    error_output::validate_maximum(input, 34);
-
-    result_output(factorial::factorial(input).to_string()); 
-}
