@@ -24,7 +24,9 @@ pub fn menu(title: &str, sub_title: &str, extra: &str) {
 }
 
 pub fn result_output(result: String) {
-    println!("{}: ", result.cyan().bold());
+    println!("{} {}", 
+        "==".yellow().bold(), 
+        result.cyan().bold());
 }
 
 pub fn prompt() {
