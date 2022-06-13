@@ -1,3 +1,4 @@
+pub mod alphabet_position;
 pub mod snip_snap;
 
 use crate::util::error_output;
@@ -7,13 +8,23 @@ use crate::util::user_input::*;
 pub fn run() {
     
     title("Misc","Please select the option");
-    menu("Misc","Option","1. Snip-snap");
+    menu("Misc","Option","1. Snip-snap
+        2. Alphabet position");
     prompt();
 
     let input = read_new();
     println!();
 
     choose(input);
+}
+
+fn alphabet_position() {
+    title("Alpha to num", "Please input some text!");
+    prompt();
+
+    let input = read_new();
+    
+    result_output(alphabet_position::alphabet_position(&input))
 }
 
 fn snip_snap() {
@@ -28,6 +39,7 @@ fn snip_snap() {
 fn choose(input: String) {
     match input.as_str() {
         "1" => snip_snap(),
+        "2" => alphabet_position(),
         _ => error_output::not_implemented(),
     }
 }
