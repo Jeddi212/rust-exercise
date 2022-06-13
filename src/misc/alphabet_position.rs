@@ -16,7 +16,7 @@ pub fn alphabet_position(text: &str) -> String {
     let ca = vec!['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l',
     'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
     
-    for c in cs.into_iter().peekable() {
+    for c in cs.into_iter() {
         let mut number:i32 = 0;
         for i in &ca {
             number += 1;
